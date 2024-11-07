@@ -18,3 +18,4 @@ Pré-requisitos:
     MySQL para o banco de dados
     Navegador atualizado
     Visual Studio Code para o desenvolvimento
+

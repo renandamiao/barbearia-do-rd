@@ -1,13 +1,14 @@
 <?php
 include '../config/db_connect.php';
 session_start();
+date_default_timezone_set('America/Sao_Paulo');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['agendamentos'])) {
     $agendamentosParaCancelar = $_POST['agendamentos'];
 
     try {
         foreach ($agendamentosParaCancelar as $id) {
-            // Insere o agendamento no histórico com o status "cancelado"
+            
             $insertQuery = $pdo->prepare("
                 INSERT INTO historico_agendamentos (nome, telefone, data, horario, status, data_registro)
                 SELECT nome, telefone, data, horario, 'cancelado', NOW() 
@@ -16,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['agendamentos'])) {
             ");
             $insertQuery->execute(['id' => $id]);
 
-            // Remove o agendamento da tabela agendamentos para liberar o horário
+            
             $deleteQuery = $pdo->prepare("DELETE FROM agendamentos WHERE id = :id");
             $deleteQuery->execute(['id' => $id]);
         }
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['agendamentos'])) {
     $_SESSION['mensagem'] = "<h3>Erro no Cancelamento</h3><p>Nenhum agendamento selecionado para cancelamento.</p>";
 }
 
-// Redireciona para a página de feedback
+
 header("Location: feedback.php");
 exit;
 ?>

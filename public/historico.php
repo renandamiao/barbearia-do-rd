@@ -30,19 +30,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $dataAnterior = null;
             $horarioAnterior = null;
 
-            // Agrupar agendamentos por data e horário
+          
             $grupos = [];
             foreach ($agendamentos as $agendamento) {
                 $chave = $agendamento['data'] . ' ' . $agendamento['horario'];
                 $grupos[$chave][] = $agendamento;
             }
 
-            // Exibir cada grupo de agendamentos
+           
             foreach ($grupos as $chave => $agendamentosGrupo) {
                 $dataAtual = $agendamentosGrupo[0]['data'];
                 $horarioAtual = $agendamentosGrupo[0]['horario'];
 
-                // Linha de data, separada por um título
+                
                 if ($dataAtual !== $dataAnterior) {
                     $mensagem .= "<tr style='background-color: #e0e0e0;'>
                                     <td colspan='4' style='text-align: center; font-weight: bold; padding: 8px;'>" . htmlspecialchars($dataAtual) . "</td>
@@ -50,9 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $dataAnterior = $dataAtual;
                 }
 
-                // Exibir todos os agendamentos com o mesmo horário e destacar se há status duplicado
+                
                 foreach ($agendamentosGrupo as $agendamento) {
-                    $rowStyle = (count($agendamentosGrupo) > 1) ? "border-left: 3px solid #ff6347; background-color: #ffefef;" : ""; // Marca os duplicados
+                    $rowStyle = (count($agendamentosGrupo) > 1) ? "border-left: 3px solid #ff6347; background-color: #ffefef;" : ""; 
 
                     $mensagem .= "<tr style='$rowStyle'>
                                     <td></td>

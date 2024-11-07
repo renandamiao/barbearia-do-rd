@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -21,7 +21,7 @@ body {
     text-align: center;
 }
 
-/* Container principal */
+
 .container {
     background: #fff;
     width: 100%;
@@ -33,7 +33,7 @@ body {
 }
 
 h2 {
-    text-align: center; /* Título centralizado */
+    text-align: center; 
     color: #4CAF50;
     margin-bottom: 20px;
 }
@@ -52,9 +52,9 @@ h3 {
     margin-bottom: 10px;
 }
 
-/* Classe para espaçamento extra entre parágrafos específicos */
+
 .espaco-inferior {
-    margin-bottom: 20px; /* Ajuste conforme necessário */
+    margin-bottom: 20px;
 }
 
 form {
@@ -119,7 +119,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Adaptação para dispositivos móveis */
+
 @media (max-width: 600px) {
     .container, .feedback-container {
         padding: 15px;
@@ -144,9 +144,9 @@ a:hover {
 }
 
 .btn-primary {
-    background-color: #4CAF50; /* Cor de fundo */
-    color: white; /* Cor do texto */
-    padding: 10px 20px; /* Espaçamento interno */
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -155,7 +155,7 @@ a:hover {
 }
 
 .btn-primary:hover {
-    background-color: #45a049; /* Cor de fundo ao passar o mouse */
+    background-color: #45a049;
 }
 
 .container .info p {
@@ -169,58 +169,4 @@ a:hover {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
-
-.cancel-title {
-    text-align: center;
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
-.custom-checkbox {
-    width: 24px;
-    height: 24px;
-    border: 2px solid #4CAF50;
-    border-radius: 50%;
-    appearance: none;
-    cursor: pointer;
-    margin-right: 10px;
-    position: relative;
-}
-
-.custom-checkbox:checked {
-    background-color: #4CAF50;
-    border-color: #4CAF50;
-}
-
-.agendamento-label {
-    font-size: 16px;
-    color: #333;
-}
-
-.submit-button-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.btn-primary {
-    font-size: 16px;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.btn-primary:hover {
-    background-color: #45a049;
 }

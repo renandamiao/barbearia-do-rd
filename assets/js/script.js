@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const telefoneInputs = document.querySelectorAll('input[name="telefone"], #telefoneCancel, #telefoneVerificar, #telefoneHistorico');
     telefoneInputs.forEach(input => {
         input.addEventListener("input", function(e) {
-            let numero = e.target.value.replace(/\D/g, ""); // Remove caracteres não numéricos
-            // Limita o número de dígitos a 11
+            let numero = e.target.value.replace(/\D/g, ""); 
+            
             if (numero.length > 11) {
                 numero = numero.substring(0, 11);
             }
@@ -80,5 +80,3 @@ function historicoAgendamentos() {
         mostrarNotificacao("Histórico de agendamentos exibido com sucesso!");
     });
 }
-
-
